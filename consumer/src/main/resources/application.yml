@@ -1,0 +1,16 @@
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+server:
+  port: 8091
+
+spring:
+  rabbitmq:
+    host: localhost #本机的虚拟ip
+    port: 5672 #端口号
+    username: hmall
+    virtual-host: /hmall
+    password: 12345678
+    listener:
+      simple:
+        prefetch: 1 # 能者多劳

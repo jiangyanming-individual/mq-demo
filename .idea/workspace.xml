@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a0ecbb10-5775-406f-bcc9-7ad9de5a65aa" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="D:\Environment\Maven-3.9.6" />
+        <option name="localRepository" value="D:\Environment\MavenRepository" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="D:\Environment\Maven-3.9.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2hojuotQAK7djNC6C7Y1t0DJ9nQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.publisherTest.testSendDirectExchangeMessage.executor": "Run",
+    "JUnit.publisherTest.testSendFanoutExchangeMessage.executor": "Run",
+    "JUnit.publisherTest.testSendMessage.executor": "Run",
+    "JUnit.publisherTest.testSendTopticExchangeMessage.executor": "Run",
+    "JUnit.publisherTest.testSendWorkQueueMessage.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ConsumerApplication.executor": "Run",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/WorkSpace/Java_workspace/mq-demo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.publisherTest.testSendTopticExchangeMessage">
+    <configuration name="publisherTest.testSendDirectExchangeMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="publisher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.publisher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.publisher" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.publisherTest" />
+      <option name="METHOD_NAME" value="testSendDirectExchangeMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="publisherTest.testSendFanoutExchangeMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="publisher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.publisher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.publisher" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.publisherTest" />
+      <option name="METHOD_NAME" value="testSendFanoutExchangeMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="publisherTest.testSendTopticExchangeMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="publisher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.publisher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.publisher" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.publisherTest" />
+      <option name="METHOD_NAME" value="testSendTopticExchangeMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="publisherTest.testSendWorkQueueMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="publisher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.publisher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.publisher" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.publisherTest" />
+      <option name="METHOD_NAME" value="testSendWorkQueueMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="consumer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.itheima.consumer.ConsumerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.consumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.publisherTest.testSendTopticExchangeMessage" />
+        <item itemvalue="Spring Boot.ConsumerApplication" />
+        <item itemvalue="JUnit.publisherTest.testSendDirectExchangeMessage" />
+        <item itemvalue="JUnit.publisherTest.testSendFanoutExchangeMessage" />
+        <item itemvalue="JUnit.publisherTest.testSendWorkQueueMessage" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0ecbb10-5775-406f-bcc9-7ad9de5a65aa" name="Changes" comment="" />
+      <created>1718267550164</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718267550164</updated>
+      <workItem from="1718267551573" duration="5624000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
