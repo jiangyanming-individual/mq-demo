@@ -6,6 +6,8 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpringBootTest
 public class publisherTest {
@@ -72,7 +74,16 @@ public class publisherTest {
         String message = "Hello everyOne,this is Toptic Exchange";
         //发送消息
         rabbitTemplate.convertAndSend(exchangeName,"china.news", message);
+    }
 
+
+    @Test
+    public void  testSendObjectMessage() throws InterruptedException {
+        Map<String,Object> message = new HashMap<>();
+        message.put("name", "柳岩");
+        message.put("age", 21);
+        //发送消息
+        rabbitTemplate.convertAndSend("object.queue", message);
     }
 
 }

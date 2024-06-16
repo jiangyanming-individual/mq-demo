@@ -8,6 +8,8 @@ import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 @Component
 public class SpringRabbitListener {
 
@@ -94,6 +96,17 @@ public class SpringRabbitListener {
     ))
     public void listenTopicQueue2(String message) throws InterruptedException {
         System.out.println("消费者2接收到 Topic交换机的消息：【" + message + "】");
+    }
+
+    /**
+     * 定义消息转换器：
+     * @param message
+     * @throws InterruptedException
+     */
+
+    @RabbitListener(queues = "object.queue")
+    public void listenObjectQueue(Map<String, Object> message) throws InterruptedException {
+        System.out.println("转换器转后的消息：【" + message + "】");
     }
 
 }
