@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ab80077-d33e-4227-be75-35461f0c23c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/config/MessageConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/config/MessageConverterConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/config/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/publisher/src/main/java/com/itheima/publisher/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publisher/src/main/java/com/itheima/publisher/config/ProviderCallBackConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/ConsumerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/ConsumerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/listener/SpringRabbitListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/listener/SpringRabbitListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/target/classes/com/itheima/consumer/ConsumerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/com/itheima/consumer/ConsumerApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/target/classes/com/itheima/consumer/listener/SpringRabbitListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/com/itheima/consumer/listener/SpringRabbitListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/publisher/src/main/java/com/itheima/publisher/PublisherApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/src/main/java/com/itheima/publisher/PublisherApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publisher/src/main/java/com/itheima/publisher/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/src/main/java/com/itheima/publisher/config/RabbitMQConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/publisher/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/publisher/src/test/java/com/itheima/publisher/publisherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/src/test/java/com/itheima/publisher/publisherTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/publisher/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/target/classes/com/itheima/publisher/PublisherApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/target/classes/com/itheima/publisher/PublisherApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/publisherTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/publisherTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +51,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.publisherTest.testSendLazyQueue.executor": "Run",
     "JUnit.publisherTest.testSendObjectMessage.executor": "Run",
+    "JUnit.publisherTest.testSendPublisherConfirm.executor": "Run",
+    "JUnit.publisherTest.testSendPublisterConfirm.executor": "Run",
     "JUnit.publisherTest.testSendTopticExchangeMessage.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -81,7 +77,23 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.publisherTest.testSendObjectMessage">
+  <component name="RunManager" selected="JUnit.publisherTest.testSendLazyQueue">
+    <configuration name="publisherTest.testSendLazyQueue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="publisher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.publisher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.publisher" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.publisherTest" />
+      <option name="METHOD_NAME" value="testSendLazyQueue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="publisherTest.testSendObjectMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="publisher" />
       <extension name="coverage">
@@ -98,7 +110,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="publisherTest.testSendTopticExchangeMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="publisherTest.testSendPublisherConfirm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="publisher" />
       <extension name="coverage">
         <pattern>
@@ -108,7 +120,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.itheima.publisher" />
       <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.publisherTest" />
-      <option name="METHOD_NAME" value="testSendTopticExchangeMessage" />
+      <option name="METHOD_NAME" value="testSendPublisherConfirm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,10 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.publisherTest.testSendObjectMessage" />
+        <item itemvalue="JUnit.publisherTest.testSendLazyQueue" />
         <item itemvalue="Spring Boot.ConsumerApplication" />
+        <item itemvalue="JUnit.publisherTest.testSendPublisherConfirm" />
         <item itemvalue="Spring Boot.PublisherApplication" />
-        <item itemvalue="JUnit.publisherTest.testSendTopticExchangeMessage" />
+        <item itemvalue="JUnit.publisherTest.testSendObjectMessage" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +182,8 @@
       <workItem from="1718335717454" duration="11000" />
       <workItem from="1718336030198" duration="346000" />
       <workItem from="1718352963309" duration="5000" />
-      <workItem from="1718512188435" duration="6059000" />
+      <workItem from="1718512188435" duration="6503000" />
+      <workItem from="1718541248207" duration="8512000" />
     </task>
     <servers />
   </component>

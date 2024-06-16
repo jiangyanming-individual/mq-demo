@@ -1,15 +1,23 @@
 package com.itheima.publisher;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.AmqpException;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessagePostProcessor;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.concurrent.ListenableFutureCallback;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @SpringBootTest
+@Slf4j
 public class publisherTest {
 
 
@@ -76,7 +84,6 @@ public class publisherTest {
         rabbitTemplate.convertAndSend(exchangeName,"china.news", message);
     }
 
-
     @Test
     public void  testSendObjectMessage() throws InterruptedException {
         Map<String,Object> message = new HashMap<>();
@@ -84,6 +91,61 @@ public class publisherTest {
         message.put("age", 21);
         //发送消息
         rabbitTemplate.convertAndSend("object.queue", message);
+    }
+
+
+    @Test
+    public void  testSendPublisherConfirm() throws InterruptedException {
+        // 1.创建CorrelationData
+        CorrelationData cd = new CorrelationData(UUID.randomUUID().toString()); //设置唯一的一个id
+        //给future 添加callback
+        cd.getFuture().addCallback(new ListenableFutureCallback<CorrelationData.Confirm>() {
+            @Override
+            public void onFailure(Throwable ex) {
+                // 2.1.Future发生异常时的处理逻辑，基本不会触发
+                log.error("send message fail", ex);
+            }
+            @Override
+            public void onSuccess(CorrelationData.Confirm result) {
+                if (result.isAck()){
+                    log.debug("发送消息成功，收到 ack!");
+                }else {
+                    log.error("消息发送失败,返回nack，错误原因为：{}",result.getReason());
+                }
+            }
+        });
+        String exchange="hmall.direct";
+        String message="hello";
+        //发送消息
+        rabbitTemplate.convertAndSend(exchange, "red",message,cd);
+    }
+
+
+    @Test
+    public void  testSendLazyQueue() throws InterruptedException {
+
+        CorrelationData cd = new CorrelationData(UUID.randomUUID().toString());
+        cd.getFuture().addCallback(new ListenableFutureCallback<CorrelationData.Confirm>() {
+            @Override
+            public void onFailure(Throwable ex) {
+                // 2.1.Future发生异常时的处理逻辑，基本不会触发
+                log.error("send message fail", ex);
+            }
+
+            @Override
+            public void onSuccess(CorrelationData.Confirm result) {
+                if (result.isAck()){
+                    log.debug("消息发送成功，成功收到ack");
+                }else {
+                    log.error("消息发送失败，返回nack, 失败原因是{}", result.getReason());
+                }
+            }
+        });
+        Map<String,Object> message = new HashMap<>();
+        message.put("name", "柳岩");
+        message.put("age", 21);
+        //发送消息
+        rabbitTemplate.convertAndSend("lazy.queue", message,cd);
     }
 
 }

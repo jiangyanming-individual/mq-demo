@@ -2,10 +2,7 @@ package com.itheima.consumer.listener;
 
 
 import org.springframework.amqp.core.ExchangeTypes;
-import org.springframework.amqp.rabbit.annotation.Exchange;
-import org.springframework.amqp.rabbit.annotation.Queue;
-import org.springframework.amqp.rabbit.annotation.QueueBinding;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
@@ -106,6 +103,30 @@ public class SpringRabbitListener {
 
     @RabbitListener(queues = "object.queue")
     public void listenObjectQueue(Map<String, Object> message) throws InterruptedException {
+        System.out.println("转换器转后的消息：【" + message + "】");
+    }
+
+    @RabbitListener(bindings = @QueueBinding(
+            value = @Queue("hmall.queue"),
+            exchange = @Exchange(value = "hmall.direct"),
+            key = "red"
+    ))
+    public void listenPublisherConfirm(String message) throws InterruptedException {
+        System.out.println("转换器转后的消息：【" + message + "】");
+    }
+
+
+    /**
+     * 惰性队列
+     * @param message
+     * @throws InterruptedException
+     */
+    @RabbitListener(queuesToDeclare = @Queue(
+            name = "lazy.queue",
+            durable = "true",
+            arguments = @Argument(name = "x-queue-mode",value = "lazy")
+    ))
+    public void listenLazyQueue(Map<String,Object> message) throws InterruptedException {
         System.out.println("转换器转后的消息：【" + message + "】");
     }
 

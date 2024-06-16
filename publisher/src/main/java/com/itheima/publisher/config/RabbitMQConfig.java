@@ -1,32 +1,38 @@
 package com.itheima.publisher.config;
 
 
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.ReturnedMessage;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Configuration;
+import javax.annotation.PostConstruct;
 
-import javax.annotation.Resource;
 
 /**
- * 生产者序列化
+ *  * 生产者消息回调配置类
  */
 @Configuration
-public class RabbitMQConfig implements InitializingBean {
+@Slf4j
+@AllArgsConstructor
+public class RabbitMQConfig {
 
-    @Resource
-    private RabbitTemplate rabbitTemplate;
-
-
+    private final RabbitTemplate rabbitTemplate;
     /**
-     * 发送消息JSON序列化
+     * 配置回调
      */
-    @Override
-    public void afterPropertiesSet() throws Exception {
-
-        //使用JSON序列化
-        Jackson2JsonMessageConverter jackson2JsonMessageConverter = new Jackson2JsonMessageConverter();
-        jackson2JsonMessageConverter.setCreateMessageIds(true);
-        rabbitTemplate.setMessageConverter(jackson2JsonMessageConverter);
+    @PostConstruct
+    public void init(){
+        rabbitTemplate.setReturnsCallback(new RabbitTemplate.ReturnsCallback() {
+            @Override
+            public void returnedMessage(ReturnedMessage returnedMessage) {
+                log.error("触发return callback,");
+                log.debug("交换机为： "+ returnedMessage.getExchange());
+                log.debug("消息为： "+ returnedMessage.getMessage());
+                log.debug("RoutingKey为： "+ returnedMessage.getRoutingKey());
+                log.debug("ReplyText为： "+ returnedMessage.getReplyText());
+                log.debug("ReplyCode为： "+ returnedMessage.getReplyCode());
+            }
+        });
     }
 }
