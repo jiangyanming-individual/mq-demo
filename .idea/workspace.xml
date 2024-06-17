@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ab80077-d33e-4227-be75-35461f0c23c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/config/ErrorMessageConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/config/DelayExchangeConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/listener/SpringRabbitListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/listener/SpringRabbitListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/target/classes/com/itheima/consumer/listener/SpringRabbitListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/com/itheima/consumer/listener/SpringRabbitListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/publisher/src/test/java/com/itheima/publisher/publisherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/src/test/java/com/itheima/publisher/publisherTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/publisherTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/publisherTest$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/publisherTest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/publisherTest$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/publisherTest$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/publisherTest$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/publisherTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/publisherTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,13 +50,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.publisherTest.testPublisherDelayMessage.executor": "Run",
     "JUnit.publisherTest.testSendDlxMessage.executor": "Run",
     "JUnit.publisherTest.testSendLazyQueue.executor": "Debug",
-    "JUnit.publisherTest.testSendMessage.executor": "Debug",
+    "JUnit.publisherTest.testSendMessage.executor": "Run",
     "JUnit.publisherTest.testSendObjectMessage.executor": "Run",
     "JUnit.publisherTest.testSendPublisherConfirm.executor": "Run",
     "JUnit.publisherTest.testSendPublisterConfirm.executor": "Run",
     "JUnit.publisherTest.testSendTopticExchangeMessage.executor": "Run",
+    "JUnit.publisherTest.testSendWorkQueueMessage.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -80,7 +80,23 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.publisherTest.testSendDlxMessage">
+  <component name="RunManager" selected="JUnit.publisherTest.testPublisherDelayMessage">
+    <configuration name="publisherTest.testPublisherDelayMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="publisher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.publisher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.publisher" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.publisherTest" />
+      <option name="METHOD_NAME" value="testPublisherDelayMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="publisherTest.testSendDlxMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="publisher" />
       <extension name="coverage">
@@ -92,22 +108,6 @@
       <option name="PACKAGE_NAME" value="com.itheima.publisher" />
       <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.publisherTest" />
       <option name="METHOD_NAME" value="testSendDlxMessage" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="publisherTest.testSendLazyQueue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="publisher" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itheima.publisher.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.itheima.publisher" />
-      <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.publisherTest" />
-      <option name="METHOD_NAME" value="testSendLazyQueue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,7 +129,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="publisherTest.testSendPublisherConfirm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="publisherTest.testSendWorkQueueMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="publisher" />
       <extension name="coverage">
         <pattern>
@@ -139,7 +139,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.itheima.publisher" />
       <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.publisherTest" />
-      <option name="METHOD_NAME" value="testSendPublisherConfirm" />
+      <option name="METHOD_NAME" value="testSendWorkQueueMessage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -160,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.publisherTest.testSendDlxMessage" />
+        <item itemvalue="JUnit.publisherTest.testPublisherDelayMessage" />
         <item itemvalue="Spring Boot.ConsumerApplication" />
         <item itemvalue="JUnit.publisherTest.testSendMessage" />
-        <item itemvalue="JUnit.publisherTest.testSendLazyQueue" />
-        <item itemvalue="JUnit.publisherTest.testSendPublisherConfirm" />
+        <item itemvalue="JUnit.publisherTest.testSendWorkQueueMessage" />
+        <item itemvalue="JUnit.publisherTest.testSendDlxMessage" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +189,7 @@
       <workItem from="1718336030198" duration="346000" />
       <workItem from="1718352963309" duration="5000" />
       <workItem from="1718512188435" duration="6503000" />
-      <workItem from="1718541248207" duration="15388000" />
+      <workItem from="1718541248207" duration="19208000" />
     </task>
     <servers />
   </component>

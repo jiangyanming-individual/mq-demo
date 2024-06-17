@@ -22,4 +22,4 @@ spring:
           initial-interval: 1000ms
           multiplier: 1
           max-attempts: 3
-          stateless: true # true无状态，false是有状态
+          stateless: false # true无状态，false是有状态

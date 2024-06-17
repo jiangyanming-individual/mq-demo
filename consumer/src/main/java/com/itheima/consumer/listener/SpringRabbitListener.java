@@ -16,7 +16,7 @@ public class SpringRabbitListener {
     @RabbitListener(queues = "simple.queue")
     public void listenSimpleQueueMessage(String message){
         System.out.println("spring 消费者接收到消息：【" + message + "】");
-        throw new RuntimeException("故意的");
+//        throw new RuntimeException("故意的");
     }
 
     /**
@@ -144,6 +144,17 @@ public class SpringRabbitListener {
     ))
     public void listenDlxQueueMessage(String message){
         System.out.println("消费者接收到过期的消息，由死信交换机进行处理：【" + message + "】");
+    }
+
+
+
+    @RabbitListener(bindings = @QueueBinding(
+            value = @Queue(name = "delay.queue", durable = "true"),
+            exchange = @Exchange(name = "delay.direct", delayed = "true"),
+            key = "delay"
+    ))
+    public void listenDelayMessage(String msg){
+        log.info("接收到delay.queue的延迟消息：{}", msg);
     }
 
 }

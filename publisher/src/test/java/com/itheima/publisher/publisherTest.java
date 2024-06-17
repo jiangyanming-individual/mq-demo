@@ -156,9 +156,7 @@ public class publisherTest {
     @Test
     public void  testSendDlxMessage() throws InterruptedException {
 
-
         CorrelationData cd = new CorrelationData(UUID.randomUUID().toString());
-
         cd.getFuture().addCallback(new ListenableFutureCallback<CorrelationData.Confirm>() {
             @Override
             public void onFailure(Throwable ex) {
@@ -188,6 +186,25 @@ public class publisherTest {
             }
         },cd);
         log.info("消息发送成功！");
+    }
+
+    /**
+     * 声明延迟交换机
+     */
+    @Test
+    void testPublisherDelayMessage() {
+        // 1.创建消息
+        String message = "hello, delayed message";
+        // 2.发送消息，利用消息后置处理器添加消息头
+        rabbitTemplate.convertAndSend("delay.direct", "delay", message, new MessagePostProcessor() {
+            @Override
+            public Message postProcessMessage(Message message) throws AmqpException {
+                // 添加延迟消息时间
+                message.getMessageProperties().setDelay(5000);
+                return message;
+            }
+        });
+        log.info("发送消息成功");
     }
 
 }
