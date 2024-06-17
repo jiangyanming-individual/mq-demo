@@ -1,6 +1,8 @@
 logging:
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+  level:
+    com.itheima: debug
 server:
   port: 8091
 
@@ -14,3 +16,10 @@ spring:
     listener:
       simple:
         prefetch: 1 # 能者多劳
+        acknowledge-mode: auto #消费者消息确认机制开启，自动
+        retry: #消费者开启消息重试机制：
+          enabled: true
+          initial-interval: 1000ms
+          multiplier: 1
+          max-attempts: 3
+          stateless: true # true无状态，false是有状态

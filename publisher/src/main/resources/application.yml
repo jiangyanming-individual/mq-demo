@@ -20,4 +20,4 @@ spring:
         multiplier: 1 # 失败后下次等待的时长的倍数
         max-attempts: 3 # 最多尝试的次数
     publisher-confirm-type: correlated # 生产者确认机制
-    publisher-returns: true
+    publisher-returns: true # return

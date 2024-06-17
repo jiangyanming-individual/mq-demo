@@ -148,4 +148,46 @@ public class publisherTest {
         rabbitTemplate.convertAndSend("lazy.queue", message,cd);
     }
 
+
+    /**
+     * 设置过期时间
+     * @throws InterruptedException
+     */
+    @Test
+    public void  testSendDlxMessage() throws InterruptedException {
+
+
+        CorrelationData cd = new CorrelationData(UUID.randomUUID().toString());
+
+        cd.getFuture().addCallback(new ListenableFutureCallback<CorrelationData.Confirm>() {
+            @Override
+            public void onFailure(Throwable ex) {
+                log.error("消息发送失败");
+            }
+
+            @Override
+            public void onSuccess(CorrelationData.Confirm result) {
+                if (result.isAck()){
+                    log.debug("消息发送成功");
+                }else {
+                    log.error("消息发送失败 {}",result.getReason());
+                }
+            }
+        });
+        //普通队列交换机
+        String exchangeName = "toDlx.direct";
+        String message = "Hello, this is todlx message";
+        String routingKey="todlx";
+        //发送消息
+        rabbitTemplate.convertAndSend(exchangeName, routingKey, message, new MessagePostProcessor() {
+            @Override
+            public Message postProcessMessage(Message message) throws AmqpException {
+                //设置过期时间为10s
+                message.getMessageProperties().setExpiration(String.valueOf(10000));
+                return message;
+            }
+        },cd);
+        log.info("消息发送成功！");
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.itheima.consumer.listener;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.rabbit.annotation.*;
 import org.springframework.stereotype.Component;
@@ -8,12 +9,14 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 @Component
+@Slf4j
 public class SpringRabbitListener {
 
 
     @RabbitListener(queues = "simple.queue")
     public void listenSimpleQueueMessage(String message){
         System.out.println("spring 消费者接收到消息：【" + message + "】");
+        throw new RuntimeException("故意的");
     }
 
     /**
@@ -128,6 +131,19 @@ public class SpringRabbitListener {
     ))
     public void listenLazyQueue(Map<String,Object> message) throws InterruptedException {
         System.out.println("转换器转后的消息：【" + message + "】");
+    }
+
+    /**
+     * 绑定死信队列和交换机,死信监听：
+     * @param message
+     */
+    @RabbitListener(bindings = @QueueBinding(
+            value = @Queue("dlx.queue"),
+            exchange = @Exchange("dlx.direct"),
+            key = "dlx"
+    ))
+    public void listenDlxQueueMessage(String message){
+        System.out.println("消费者接收到过期的消息，由死信交换机进行处理：【" + message + "】");
     }
 
 }
